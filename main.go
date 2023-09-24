@@ -1,10 +1,9 @@
 package main
 
 import (
-	"os"
 	"flag"
 	"github.com/quamejnr/heimdall/util"
-
+	"os"
 )
 
 func main() {
@@ -13,12 +12,11 @@ func main() {
 	os.Chdir(root + "/Documents")
 
 	// Get command line args
-	cmd := flag.String("cmd", "", "Command to be run")
-	file := flag.String("f", "", "File to be searched for")
+	cmd := flag.String("cmd", "", "Shell command to be run")
+	file := flag.String("f", "", "Name of file to be searched for")
+	strict := flag.Bool("s", false, "Strict name matching. If `true` filename/folder provided should be the exact match.")
 	flag.Parse()
 
-	files := util.FindFiles(*file)
+	files := util.FindFiles(*file, *strict)
 	util.RunCommand(*cmd, files)
 }
-
-
