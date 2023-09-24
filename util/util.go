@@ -18,6 +18,7 @@ func RunCommand(command string, files []string) {
 
 	case numFiles == 1:
 		cmd := exec.Command(command, files[0])
+		cmd.Stdin = os.Stdout
 		cmd.Stdout = os.Stdout
 		if err := cmd.Run(); err != nil {
 			fmt.Println("ERROR: Command couldn't run on file.\nCommand may be running on wrong file or program does not support.", command)
@@ -27,7 +28,7 @@ func RunCommand(command string, files []string) {
 	default:
 		fmt.Println("Choose option: ")
 		for i, f := range files {
-			fmt.Printf("%d.\t%s\n", i+1, f)
+			fmt.Printf("(%d)\t%s\n", i+1, f)
 		}
 
 		var input int
