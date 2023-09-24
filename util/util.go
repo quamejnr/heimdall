@@ -24,7 +24,7 @@ func RunCommand(command string, files []string) {
 		}
 
 	default:
-		fmt.Println("Choose file: ")
+		fmt.Println("Choose option: ")
 		for i, f := range files {
 			fmt.Printf("%d.\t%s\n", i+1, f)
 		}
