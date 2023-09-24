@@ -1,6 +1,7 @@
 package util
 
 import (
+	"context"
 	"fmt"
 	"io/fs"
 	"os"
@@ -57,7 +58,8 @@ func PickFile(files []string) string {
 
 // RunCommand runs shell commands provided by the parameter `command` on a file.
 func RunCommand(command string, file string) {
-	cmd := exec.Command(command, file)
+	ctx := context.Background()
+	cmd := exec.CommandContext(ctx, command, file)
 	cmd.Stdin = os.Stdout
 	cmd.Stdout = os.Stdout
 	if err := cmd.Run(); err != nil {
