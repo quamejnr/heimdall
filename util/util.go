@@ -19,11 +19,17 @@ func FindFiles(fname string, strict bool) []string {
 		if err != nil {
 			return err
 		}
-		file := strings.TrimSuffix(filepath.Base(path), filepath.Ext(path))
-		found := strings.EqualFold(file, fname)
-		if strict {
-			found = filepath.Base(path) == fname
+		
+		// Matches exact filenames when strict flag is true
+		found := filepath.Base(path) == fname
+
+		if !strict {
+			// Matches filenames ignoring file extensions and cases when the strict flag is False
+			file := strings.TrimSuffix(filepath.Base(path), filepath.Ext(path))
+			fnameNoExt := strings.Split(fname, ".")[0]
+			found = strings.EqualFold(file, fnameNoExt)
 		}
+
 		if found {
 			result = append(result, path)
 		}
@@ -50,8 +56,9 @@ func PickFile(files []string) string {
 	var input int
 	fmt.Scanln(&input)
 
-	for input > len(files) || input < 0 {
+	if input > len(files) || input < 0 {
 		fmt.Printf("Invalid option: '%d'. Choose between range 1 - %d\n", input, len(files))
+		return PickFile(files)
 	}
 	return files[input-1]
 }

@@ -3,8 +3,10 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/quamejnr/heimdall/util"
 	"os"
+	"path/filepath"
+
+	"github.com/quamejnr/heimdall/util"
 )
 
 func main() {
@@ -16,7 +18,8 @@ func main() {
 
 	// Get into the user documents directory
 	root, _ := os.UserHomeDir()
-	os.Chdir(root + "/Documents")
+	dir := filepath.Join(root, "Documents")
+	os.Chdir(dir)
 
 	files := util.FindFiles(*fileName, *strict)
 	if len(files) == 0 {
