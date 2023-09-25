@@ -36,8 +36,8 @@ func FindFiles(fname string, strict bool) []string {
 	return result
 }
 
-// PickFile returns name of a file/folder among a list of files/folders.
-// Returns the only name of the file/folder if only one file is returned
+// PickFile returns file among a list of files/folders according to a chosen option.
+// If only one file is passed in the files parameter, that file will be returned.
 func PickFile(files []string) string {
 	if len(files) == 1 {
 		return files[0]
