@@ -1,6 +1,5 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2023 KWAME AKUAMOAH-BOATENG <kaboateng14@gmail.com>
 */
 package main
 
