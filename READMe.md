@@ -6,3 +6,4 @@ I mostly work on multiple projects on my machine concurrently and sometimes I am
 
 Add GOPATH to Paths
 `export PATH=$PATH:$(go env GOPATH)/bin`
+Test Example
