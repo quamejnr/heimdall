@@ -22,7 +22,10 @@ You can also run the command using flags
 heimdall -c=ls -f=heimdall
 ```
 <p align="center"><img src="./assets/demo.gif?raw=true"/></p>
-> You can use the `--flag` option to get more details about the commands and their options
+You can use the `--flag` option to get more details about the commands and their options
+
+## Note
+Heimdall only searches for files that are present in `$HOME/Documents` directory.
 
 ## Contributing
 Contributions to Heimdall are welcome! If you find a bug, have an idea for an improvement, or want to add a new feature, please open an issue or create a pull request on the Heimdall GitHub repository.
