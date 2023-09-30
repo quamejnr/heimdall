@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/quamejnr/heimdall/utils"
+	"github.com/quamejnr/heimdall/cmd/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -48,7 +48,7 @@ func Execute() {
 
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&command, "cmd", "c", "", "Shell command")
-	rootCmd.PersistentFlags().StringVarP(&fileName, "filename", "f", "", "File/Folder to run shell command on")
+	rootCmd.PersistentFlags().StringVarP(&fileName, "file", "f", "", "File/Folder to run shell command on")
 	rootCmd.Flags().BoolVarP(&strict, "strict", "s", true, "Strict name matching")
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
