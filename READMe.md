@@ -30,4 +30,4 @@ Heimdall only searches for files that are present in `$HOME/Documents` directory
 ## Contributing
 Contributions to Heimdall are welcome! If you find a bug, have an idea for an improvement, or want to add a new feature, please open an issue or create a pull request on the Heimdall GitHub repository.
 ## License
-Delly is open-source software licensed under the MIT License. You are free to use, modify, and distribute this tool according to the terms of the license.
+Heimdall is open-source software licensed under the MIT License. You are free to use, modify, and distribute this tool according to the terms of the license.
