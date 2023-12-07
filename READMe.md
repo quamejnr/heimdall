@@ -6,7 +6,7 @@ This is Heimdall, a program that allows you to run your basic shell commands lik
 
 If you have Golang installed on your machine, you can install with 
 ```sh
-go install https://github.com/quamejnr/heimdall 
+go install github.com/quamejnr/heimdall@latest 
 ```
 ## Usage
 
