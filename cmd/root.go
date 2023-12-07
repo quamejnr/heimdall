@@ -60,7 +60,6 @@ func heimdall(command string, fileName string, strict bool) {
 	root, _ := os.UserHomeDir()
 	lookUpDir := utils.GetLookUpDir("HEIMDALL_DIR", defaultDir)
 	dir := filepath.Join(root, lookUpDir)
-	fmt.Println(dir)
 	os.Chdir(dir)
 
 	files := utils.FindFiles(fileName, strict)
