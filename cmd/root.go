@@ -17,6 +17,8 @@ var (
 	strict            bool
 )
 
+const defaultDir = "Documents"
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "heimdall",
@@ -56,7 +58,9 @@ func init() {
 func heimdall(command string, fileName string, strict bool) {
 	// Get into the user documents directory
 	root, _ := os.UserHomeDir()
-	dir := filepath.Join(root, "Documents")
+	lookUpDir := utils.GetLookUpDir("HEIMDALL_DIR", defaultDir)
+	dir := filepath.Join(root, lookUpDir)
+	fmt.Println(dir)
 	os.Chdir(dir)
 
 	files := utils.FindFiles(fileName, strict)

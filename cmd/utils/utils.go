@@ -8,8 +8,8 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
-
 )
+
 // findFiles return list of files and folders whose name matches the string fname.
 // When the parameter strict is true, it returns files/folders with the exact match as fname.
 // If strict is false, it matches files/folders irrespective of case and extension.
@@ -73,4 +73,11 @@ func RunCommand(command string, file string) {
 		fmt.Println("ERROR: Command couldn't run on file.\nCommand may be running on wrong file or program does not support.", command)
 		return
 	}
+}
+
+func GetLookUpDir(key, fallback string) string {
+	if val, found := os.LookupEnv(key); found {
+		return val
+	}
+	return fallback
 }

@@ -25,7 +25,11 @@ heimdall -c=ls -f=heimdall
 You can use the `--flag` option to get more details about the commands and their options
 
 ## Note
-Heimdall only searches for files that are present in `$HOME/Documents` directory.
+Heimdall by default searches for files in your `$HOME/Documents` directory but you can change the directory it should look up from `Documents` to the directory you want by setting it as a value of `HEIMDALL_DIR` env.
+For example, you want your lookup to be done in your `Application` instead you can run
+```sh
+export HEIMDALL_DIR=Applications
+```
 
 ## Contributing
 Contributions to Heimdall are welcome! If you find a bug, have an idea for an improvement, or want to add a new feature, please open an issue or create a pull request on the Heimdall GitHub repository.
