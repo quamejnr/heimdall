@@ -67,8 +67,9 @@ func PickFile(files []string) string {
 func RunCommand(command string, file string) {
 	ctx := context.Background()
 	cmd := exec.CommandContext(ctx, command, file)
-	cmd.Stdin = os.Stdout
+	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
+  cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
 		fmt.Println("ERROR: Command couldn't run on file.\nCommand may be running on wrong file or program does not support.", command)
 		return
